@@ -7,13 +7,9 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
           session[:user_id] = @user.id
-        #   logged_in?(@user)
-        #    session[creator_id] = @user.id
           flash[:success] = 'You have signed up successfully'
           redirect_to user_path(@user)
         else
-            puts @user.errors.full_messages, 'ERRORS!!!!!!!!!'
-
           flash[:danger] = 'Oops! Something went wrong!'
           render 'new'
         end
