@@ -5,4 +5,14 @@ class User < ApplicationRecord
 
     validates :username, presence: true, length: { minimum: 3, maximum: 35 }
     validates_uniqueness_of :username
+
+    def total_grouped_books
+        grouped = books.select { |item| item.groups.exists? }
+        grouped.map(&:amount).inject(:+)
+    end
+    
+      def total_ungrouped_books
+        grouped = books.reject { |item| item.groups.exists? }
+        grouped.map(&:amount).inject(:+)
+     end
 end
