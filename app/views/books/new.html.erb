@@ -1,0 +1,26 @@
+<div class="text-center">
+    <h1 class=" mt-5 pb-4 pt-0">Create Book Expense</h1>
+    
+        <%= form_for(:book, html: {class: "form-horizontal", role: "form"}, url: books_path) do |f| %>
+
+            <div class="form-group">
+                <%= f.label :title, class:"font-weight-bold" %>
+                <%= f.text_field :title, autofocus: true, autocomplete: "username", placeholder: "Enter book title", class: "form-control w-50 placeholder" %>
+            </div>
+
+            <div class="form-group">
+                 <%= f.label :amount, class:"font-weight-bold" %>
+                <%= f.number_field :amount, placeholder: "Amount", id: "amount", class: "form-control w-50 placeholder" %><br>
+            </div>
+            <div class="form-group">
+            <%= f.label :group, "Choose Group", class:"font-weight-bold"  %><br>
+           <%= f.collection_radio_buttons :group_ids, @groups, :creator_id, :name %>
+        </div>
+            <%= f.submit "Create!!! No Time", class: 'btn btn-success' %>
+
+        <% end %>
+
+</div> 
+
+
+
