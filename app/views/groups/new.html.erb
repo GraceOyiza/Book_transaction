@@ -1,0 +1,16 @@
+<div class="text-center mt-5">
+<%= form_for (@group) do |f| %>
+    <div >
+        <%= f.label :name, class:"font-weight-bold pb-3"  %>
+         <%= f.text_field :name, autofocus: true, autocomplete: "username", placeholder: "Choose a book group", class: "form-control w-50 placeholder" %>
+    </div>
+
+    <div class="mt-3 pb-3">
+        <%= f.label :icon , "Upload book image" %>
+        <%= f.file_field :icon %>
+    </div>
+
+    <%= f.submit "Add Book Group", class: "btn btn-success " %>
+<% end %>
+ 
+</div>
