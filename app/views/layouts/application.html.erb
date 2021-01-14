@@ -31,7 +31,17 @@
   </nav>
       
 
-   
+     <% if current_user %>
+         <div class="wrapper">
+          <div class="sidebar">
+           <ul class="list-unstyled">
+          <li ><%= link_to "My Expenses", books_path, class: "text-white far fa-gem"%></li>
+          <li><%= link_to "My External expenses", external_books_path, class: "text-white "%></li>
+          <li><%= link_to "My Groups", groups_path, class: "text-white"%></li>
+        </ul>
+        </div>
+        </div>
+    <% end %>
 
      <div class='content'>
         <%= yield %>
