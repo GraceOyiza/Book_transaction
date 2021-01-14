@@ -1,0 +1,12 @@
+<div class="text-center mt-5">
+
+    <div>
+        <h2 class="text-dark pb-4"><%= current_user.username %>'s book save</h2>
+        <h4 >Total Amount</h4>
+        <p class=" total-amount amount-border "><%= number_to_currency(current_user.total_grouped_books) || 0 %></p>
+    </div>    
+    <div class="text-center">
+    
+        <%= link_to  "Add new books", new_book_path, class: "btn btn-success" %>
+    </div>
+</div>
