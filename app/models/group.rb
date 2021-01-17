@@ -1,16 +1,16 @@
 class Group < ApplicationRecord
-    belongs_to :creator, class_name: 'User'
-    has_many :book_groups
-    has_many :books, through: :book_groups
-    has_one_attached :icon
+  belongs_to :creator, class_name: 'User'
+  has_many :book_groups
+  has_many :books, through: :book_groups
+  has_one_attached :icon
 
-    validates :name, presence: true, length: { minimum: 3, maximum: 35 }
-  
-    validates :icon, presence: true
+  validates :name, presence: true, length: { minimum: 3, maximum: 35 }
 
-    scope :asc, -> { order('name ASC') }
+  validates :icon, presence: true
 
-    def total_books
-      books.map(&:amount).inject(:+)
-    end
+  scope :asc, -> { order('name ASC') }
+
+  def total_books
+    books.map(&:amount).inject(:+)
+  end
 end

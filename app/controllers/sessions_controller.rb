@@ -1,10 +1,11 @@
 class SessionsController < ApplicationController
   # skip_before_action :authenticate_user
   def new; end
+
   def create
     p params, 'Params'
     @user = User.find_by_username(params[:session][:username])
-    puts @user, "user"
+    puts @user, 'user'
     if @user
       session[:user_id] = @user.id
       flash[:success] = "Welcome #{@user.username}"
@@ -14,7 +15,6 @@ class SessionsController < ApplicationController
       render :new
     end
   end
- 
 
   def destroy
     session[:user_id] = nil

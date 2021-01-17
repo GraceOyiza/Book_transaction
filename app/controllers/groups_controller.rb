@@ -1,9 +1,9 @@
 class GroupsController < ApplicationController
-    before_action :group_group, only: %i[show]
-    before_action :authenticate_user!
+  before_action :group_group, only: %i[show]
+  before_action :authenticate_user!
 
   def index
-    @groups = current_user.groups.asc 
+    @groups = current_user.groups.asc
   end
 
   def new
@@ -25,16 +25,16 @@ class GroupsController < ApplicationController
   def edit
     @group = Group.find(params[:id])
   end
-    
-def update
+
+  def update
     @group = Group.find(params[:id])
-       if @group.update(group_params)
-           flash[:success] = "Group name was successfully updated"
-           redirect_to group_path(@group)
-       else
-          render 'edit'
-       end
- end
+    if @group.update(group_params)
+      flash[:success] = 'Group name was successfully updated'
+      redirect_to group_path(@group)
+    else
+      render 'edit'
+    end
+  end
 
   def show
     if current_user.groups.include? @group
