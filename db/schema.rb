@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2021_01_15_123229) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "book_id"
-    t.integer "group_id", null: false
+    t.integer "group_id"
     t.index ["book_id"], name: "index_book_groups_on_book_id"
     t.index ["group_id"], name: "index_book_groups_on_group_id"
   end
@@ -66,5 +66,4 @@ ActiveRecord::Schema.define(version: 2021_01_15_123229) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "book_groups", "groups"
 end
