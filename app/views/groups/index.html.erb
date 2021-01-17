@@ -1,4 +1,9 @@
 <div class="main-icon text-center">
-    <%= group_array(@groups) %>
+    
+    <%= group_array(@groups) %>   
+    <tr>
+   
+    <td> <%= link_to('New Group', new_group_path, class:"btn btn-success button-styling ")%> </td>
+    </tr>
 </div>
 

@@ -2,8 +2,11 @@ class BooksController < ApplicationController
     before_action :authenticate_user!
 
     def index
-      @books = current_user.books.desc_group
+      @books = current_user.books
     end
+
+   
+  
   
     def new
       @book =  Book.new
@@ -12,10 +15,10 @@ class BooksController < ApplicationController
   
     def create
         @book = current_user.books.build(book_params)
-        @book.user_id = current_user.id
+        p @book
         if @book.save
           flash[:notice] = 'Book created successfully'
-          redirect_to root_path
+          redirect_to book_path(@book)
         else
           render :new
         end
@@ -37,6 +40,9 @@ class BooksController < ApplicationController
   
     def show; end
 
+    def external_transaction
+      @books = current_user.books.desc_no_group
+    end
   
     def destroy
       if @book
@@ -47,6 +53,12 @@ class BooksController < ApplicationController
       end
       redirect_to books_path
     end
+
+
+ def external
+      @books = current_user.books.desc_no_group
+  end
+
   
     private
   

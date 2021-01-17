@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_14_111619) do
+ActiveRecord::Schema.define(version: 2021_01_15_123229) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -36,22 +36,35 @@ ActiveRecord::Schema.define(version: 2021_01_14_111619) do
   create_table "book_groups", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "book_id"
+    t.integer "group_id", null: false
+    t.index ["book_id"], name: "index_book_groups_on_book_id"
+    t.index ["group_id"], name: "index_book_groups_on_group_id"
   end
 
   create_table "books", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
+    t.integer "amount"
+    t.integer "creator_id"
+    t.index ["creator_id"], name: "index_books_on_creator_id"
   end
 
   create_table "groups", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.integer "creator_id"
+    t.index ["creator_id"], name: "index_groups_on_creator_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "book_groups", "groups"
 end

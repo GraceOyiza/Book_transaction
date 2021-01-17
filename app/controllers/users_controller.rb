@@ -4,16 +4,18 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.new(user_params)
-        if @user.save
-          session[:user_id] = @user.id
-          flash[:success] = 'You have signed up successfully'
-          redirect_to user_path(@user)
-        else
-          flash[:danger] = 'Oops! Something went wrong!'
-          render 'new'
-        end
+      @user = User.new(user_params)
+      if @user.save
+        session[:user_id] = @user.id
+        flash[:success] = "Welcome to Gracia Book Save #{@user.username}"
+        
+        redirect_to user_path(@user)
+      else
+        puts @user.errors.full_messages, 'ERRORS!!!!!!!!!'
+        flash[:danger] = 'Oops! Something went wrong!'
+        render 'new'
       end
+    end
 
       def show
         redirect_to books_path
@@ -32,7 +34,7 @@ class UsersController < ApplicationController
 
     private
     def user_params
-      params.permit(:username)
+      params.require(:user).permit(:username)
     end
 
 end

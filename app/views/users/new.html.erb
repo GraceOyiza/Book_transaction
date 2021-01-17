@@ -4,12 +4,11 @@
        
             <%= form_for(:user, :html => {class: "form-horizontal ", role: "form"}, url: users_path) do |f| %>
 
-            <div class="form-group">
+           <div class="form-group">
                 <%= f.label :username, class:"font-weight-bold" %>
                 <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "Enter your username", class: "form-control w-50 placeholder" %>
             </div>
             <%= f.submit "Sign Up", class: 'btn btn-success' %>
-     
-        <% end %>
+     <%end%>
   </div>
   

@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-    before_action :book_group, only: %i[show]
+    before_action :group_group, only: %i[show]
     before_action :authenticate_user!
 
   def index
@@ -22,10 +22,24 @@ class GroupsController < ApplicationController
     end
   end
 
+  def edit
+    @group = Group.find(params[:id])
+  end
+    
+def update
+    @group = Group.find(params[:id])
+       if @group.update(group_params)
+           flash[:success] = "Group name was successfully updated"
+           redirect_to group_path(@group)
+       else
+          render 'edit'
+       end
+ end
+
   def show
     if current_user.groups.include? @group
-      @books = nil
-      @books = @group.books.desc if @group.books.exists?
+      @groups = nil
+      @groups = @group.groups.desc if @group.groups.exists?
     else
       flash[:danger] = 'You are not allowed to view other users groups'
       redirect_to groups_path
@@ -33,10 +47,6 @@ class GroupsController < ApplicationController
   end
 
   private
-
-  def book_group
-    @group = Group.find(params[:id])
-  end
 
   def group_params
     params.require(:group).permit(:name, :icon)
