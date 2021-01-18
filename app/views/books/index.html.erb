@@ -1,9 +1,9 @@
-<div class="text-center mt-5">
+<div class="text-center pt-5">
 
     <div>
-        <h2 class="text-dark pb-4"><%= current_user.username %>'s book save</h2>
+        <h2 class="text-dark pb-4 mt-5"><%= current_user.username %>'s book save</h2>
         <h4 >Total Amount</h4>
-        <p class=" total-amount amount-border "><%= number_to_currency(current_user.total_book_price || 0 ) %></p>
+        <p class=" total-amount btn btn-md btn-primary "><%= number_to_currency(current_user.total_book_price || 0 ) %></p>
     </div>    
     <div class="text-center">
     

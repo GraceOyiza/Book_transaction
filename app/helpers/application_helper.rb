@@ -14,9 +14,11 @@ module ApplicationHelper
   def group_array(groups)
     doc = ''
     groups.each do |group|
-    doc << "<p>#{group.name}</p>"
-    doc << "<div class='d-flex '> #{ image_tag(url_for(group.icon), class: 'icon ')}"
-    doc << "#{link_to( 'Edit', edit_group_path(group), class: 'mt-5 btn btn-success mb-0')}</div>" 
+    
+    doc << "<div class='d-flex mt-5'> #{ image_tag(url_for(group.icon), class: 'icon mt-5 ')} </div>"
+    doc << "<p  class='font-weight-bold text-uppercase '>#{group.name}</p>"
+    doc << "#{link_to( 'Edit', edit_group_path(group), class: ' btn btn-success mb-0 edit-width')}"   
+    
     end
     doc.html_safe
   end
