@@ -16,7 +16,7 @@ This is the capstone project of the Microverse Ruby on Rails curriculum. It is b
 
 ## Description:
 
-#### After log in a user can see:
+### After log in a user can see:
 
 - My expenses.
 - My external expenses.
