@@ -11,10 +11,10 @@ RSpec.describe Group, type: :model do
   end
 
   describe 'validations' do
-      it { should validate_length_of(:name).is_at_least(3) }
+    it { should validate_length_of(:name).is_at_least(3) }
   end
 
-describe 'Associations' do
+  describe 'Associations' do
     scenario { should belong_to(:creator) }
     scenario { should have_many(:books) }
     scenario { should have_many(:book_groups) }

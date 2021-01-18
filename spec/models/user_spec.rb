@@ -13,6 +13,5 @@ RSpec.describe User, type: :model do
   describe 'User associations' do
     it { should have_many(:books).without_validating_presence }
     it { should have_many(:groups).without_validating_presence }
-
   end
 end

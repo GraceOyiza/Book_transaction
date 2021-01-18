@@ -9,7 +9,7 @@ RSpec.describe BooksController, type: :controller do
       User.create(username: 'grace')
       session[:creator_id] = 1
     end
-  
+
     it { should_not render_template('external') }
   end
   describe 'GET #external' do
@@ -17,7 +17,7 @@ RSpec.describe BooksController, type: :controller do
       User.create(username: 'somoye')
       session[:creator_id] = 1
     end
-    
+
     it { should_not render_template('index') }
   end
   describe 'GET #new' do
@@ -34,7 +34,7 @@ RSpec.describe BooksController, type: :controller do
         book: {
           name: 'love',
           amount: 700
-          
+
         }
       }
       should_not permit(:name, :amount)

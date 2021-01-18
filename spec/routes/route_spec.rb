@@ -5,7 +5,7 @@ RSpec.describe 'Routing', type: :routing do
     should route(:get, '/')
       .to(controller: :homepages, action: :index)
   end
-  
+
   it do
     should route(:get, '/login')
       .to(controller: :sessions, action: :new)
@@ -50,7 +50,7 @@ RSpec.describe 'Routing', type: :routing do
     should route(:post, '/books')
       .to('books#create')
   end
-  
+
   it do
     should route(:post, '/users')
       .to(controller: :users, action: :create)
