@@ -1,5 +1,7 @@
 # README
 
+![screenshot](app/assets/images/homepage.png)
+
 This is the capstone project of the Microverse Ruby on Rails curriculum. It is built with the MVP approach. .This project has the following features:
 
 - Users can crate an account with a username and login
