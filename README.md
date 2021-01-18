@@ -52,7 +52,7 @@ This is the capstone project of the Microverse Ruby on Rails curriculum. It is b
 
 ### Install and Setup
 
-- Clone repo to your local ``
+- Clone repo to your local `https://github.com/GraceOyiza/Book_transaction.git`
 - cd into the cloned repo
 - OPen a terminal in the root of the app
 - Run `yarn install --check-files`
@@ -77,7 +77,7 @@ This is the capstone project of the Microverse Ruby on Rails curriculum. It is b
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page]().
+Feel free to check the [issues page](https://github.com/GraceOyiza/Book_transaction/issues).
 
 ## Show your support
 
