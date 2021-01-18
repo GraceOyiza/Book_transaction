@@ -16,7 +16,7 @@ module ApplicationHelper
     groups.each do |group|
       doc << "<div class='d-flex mt-5'> #{image_tag(url_for(group.icon), class: 'icon mt-5 ')} </div>"
       doc << "<p  class='font-weight-bold text-uppercase '>#{group.name}</p>"
-      doc << link_to('Edit', edit_group_path(group), class: ' btn btn-success mb-0 edit-width').to_s
+      doc << link_to('Edit', edit_group_path(group), class: ' btn btn-md btn-primary mb-0 edit-width').to_s
     end
     doc.html_safe
   end

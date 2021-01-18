@@ -36,20 +36,10 @@ class GroupsController < ApplicationController
     end
   end
 
-  # def show
-  #   if current_user.groups.include? @group
-  #     @groups = nil
-  #     @groups = @group.books.desc if @group.books.exists?
-  #   else
-  #     flash[:danger] = 'You are not allowed to view other users groups'
-  #     redirect_to groups_path
-  #   end
-  # end
-
   def show
     if current_user.groups.include? @group
-      @books = nil
-      @books = @group.books.desc if @group.books.exists?
+      # @books = nil
+      # @books = @group.books.desc if @group.books.exists?
     else
       flash[:danger] = 'You are not allowed to view other users groups'
       redirect_to groups_path
