@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :group_group, only: %i[show]
+  before_action :book_group, only: %i[show]
   before_action :authenticate_user!
 
   def index

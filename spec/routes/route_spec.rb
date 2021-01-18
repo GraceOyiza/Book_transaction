@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Routing', type: :routing do
   it do
     should route(:get, '/')
-      .to(controller: :home_page, action: :index)
+      .to(controller: :homepages, action: :index)
   end
   
   it do
