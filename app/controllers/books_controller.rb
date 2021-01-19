@@ -12,13 +12,20 @@ class BooksController < ApplicationController
 
   def create
     @book = current_user.books.build(book_params)
-    p @book
+
     if @book.save
       flash[:notice] = 'Book created successfully'
+      p @book, 'Created book', @book.groups
+      return redirect_to external_books_path if @book.groups.first.nil?
+
       redirect_to book_path(@book)
     else
       render :new
     end
+  end
+
+  def external
+    @books = current_user.books.desc_no_group
   end
 
   def edit
@@ -35,7 +42,9 @@ class BooksController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @book = Book.includes(:groups, :creator).find(params[:id])
+  end
 
   def external_transaction
     @books = current_user.books.desc_no_group
@@ -51,9 +60,7 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
-  def external
-    @books = current_user.books.desc_no_group
-  end
+
 
   private
 

@@ -34,7 +34,6 @@ This is the capstone project of the Microverse Ruby on Rails curriculum. It is b
 
 - A list of all groups is displayed  in alphabetical order.
 - Each group displays its icon and name.
-- Each group can be edited.
 - An action button "New Group" is displayed.
 
 

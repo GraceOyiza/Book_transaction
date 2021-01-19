@@ -1,23 +1,27 @@
 <div class="text-center pt-5 ">
     <h2 class="text-dark mb-5 mt-5"><%= current_user.username %>'s External Book Charges</h2>
     <% if !@books.empty? %>
-    <div class="text-center ">
+       <div class="text-center ">
        
         <p class='mb-0  p-4 shadow  w-50 external-display font-weight-bold'>Total Amount: <span class='float-right'> <%= number_to_currency(current_user.total_ungrouped_books) || 0%> </span></p>
-    </div>
+       </div>
     
-    <% @books.each do |ex| %>
+      <% @books.each do |ex| %>
         <div class="my-5 shadow w-50 external-display">
             <h4 class="ml-3 "><%= link_to  ex.title, book_path(ex), class: "text-secondary" %></h4>
             <div>
                 <p class="lead"><%= ex.amount %>$</p>
                 <small class="text-muted"><%= ex.created_at %></small>
             </div>
+            
         </div>
+      
     <% end%>
+     
     <% else %>
         <p class=" my-5 text-center">No external expense yet.</p>
         <p class= "text-center">I think you will love to create one</p>
     <% end %>
       <%= link_to('Create External Expenses', new_book_path, class:"btn btn-success  mt-5 text-center external-styling")%> 
+     
 </div>

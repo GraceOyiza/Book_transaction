@@ -2,19 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .main-icon {
-    width: 100px;
+    width: 100%;
     height: 75px;
-    margin-left: auto;
-    margin-right: auto; 
+    margin: 5% auto 0;
+   
 }
 
 .icon {
     object-fit: cover;
     width: 200%;  
-    padding: 10px;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); 
 }
 
-.edit-width{
-   width: 100%;
+.group-styling {
+   width: 24%;
 }
+
+.group-style {
+    width: 8%;
+ }

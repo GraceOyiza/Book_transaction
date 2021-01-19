@@ -50,8 +50,8 @@
  }
 
 .placeholder {
-   margin-left: auto;
-   margin-right: auto; 
+   margin: 0 auto;
+    
 }
 
 body {
@@ -64,4 +64,9 @@ body {
 
 .edit-styling {
    width: 50%;
+}
+
+.external-display {
+   margin: 0 auto;
+
 }
