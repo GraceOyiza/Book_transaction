@@ -39,7 +39,7 @@ This is the capstone project of the Microverse Ruby on Rails curriculum. It is b
 
 ## Live Demo
 
-- [Live Demo Link](https://limitless-coast-23786.herokuapp.com)
+- [Live Demo Link](https://booktransaction2021.herokuapp.com/)
 
 
 ## Built With
