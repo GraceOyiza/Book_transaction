@@ -37,9 +37,14 @@ This is the capstone project of the Microverse Ruby on Rails curriculum. It is b
 - An action button "New Group" is displayed.
 
 
+## Live Demo
+
+- [Live Demo Link](https://limitless-coast-23786.herokuapp.com)
+
+
 ## Built With
 - Rails
-- Ruby,
+- Ruby
 - HTML
 - CSS
 - ERB
