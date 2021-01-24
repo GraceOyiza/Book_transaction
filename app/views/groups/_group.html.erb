@@ -1,0 +1,17 @@
+<div class="d-flex justify-content-center my-3 shadow p-2">
+  <div class='group-img-container'>
+    <%= link_to(image_tag(group.icon, class: 'group-img'), group_path(group)) %>
+  </div>
+  <div class="card-body">
+      <div class='d-flex justify-content-between'>
+      <h3 class="card-title border-bottom pb-3 mr-2"> <%= group.name.capitalize %> </h3>
+      </div>
+      <p class="card-text"> Expenses:  <%= group.books.size  %></p>
+      
+      <p class="card-text border-bottom pb-2"> Created On: <%= group.created_at.to_s(:long)  %></p>
+      <span>
+        <%= link_to 'Delete group', group_path(group) , method: :delete, class: 'btn btn-md btn-danger' %>
+        <%= link_to 'New Book', new_book_path, class: 'btn btn-md btn-primary' %>
+      </span>
+  </div>
+</div>

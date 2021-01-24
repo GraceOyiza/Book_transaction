@@ -8,7 +8,6 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:success] = "Welcome to Gracia Book Save #{@user.username}"
-
       redirect_to user_path(@user)
     else
       puts @user.errors.full_messages, 'ERRORS!!!!!!!!!'
@@ -20,6 +19,9 @@ class UsersController < ApplicationController
   def show
     redirect_to books_path
   end
+  # def show
+  #   @user = User.find(params[:id])
+  # end
 
   def destroy
     @user = User.find(params[:id])

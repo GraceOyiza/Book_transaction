@@ -21,3 +21,39 @@ module ApplicationHelper
     doc.html_safe
   end
 end
+
+def ungrouped_calculate(arr)
+  grouped = arr.reject { |item| item.groups.exists? }
+  grouped.map(&:amount).inject(:+) || 0
+end
+
+def grouped_calculate(arr)
+  grouped = arr.select { |item| item.groups.exists? }
+  grouped.map(&:amount).inject(:+) || 0
+end
+
+def render_book_collection(collection, path)
+  out = ''
+  collection.each do |item|
+    out << render(partial: path, locals: { book: item })
+  end
+  out.html_safe
+end
+
+def display_team_logo(group, book = nil)
+  src = ''
+  src << if (book && book.groups.length.positive?) && group.icon.attached?
+           image_tag(url_for(group.icon), class: 'custom-card-img')
+         else
+           image_tag('homepage.png', class: 'custom-card-img')
+         end
+  src.html_safe
+end
+
+def render_group_collection(collection)
+  out = ''
+  collection.each do |item|
+    out << render(partial: 'group', locals: { group: item })
+  end
+  out.html_safe
+end

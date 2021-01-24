@@ -2,14 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.amount-border{
-    border: 2px solid red;
-    width: 6%;
-    margin: 0 auto;
-    
+.amount-border {
+  border: 2px solid red;
+  width: 6%;
+  margin: 0 auto;
 }
 
+.external-styling {
+  width: 30%;
+}
 
-.external-styling{
-    width: 30%;
+.total-amount {
+  margin-left: -20px;
 }

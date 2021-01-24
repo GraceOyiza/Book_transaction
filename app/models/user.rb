@@ -10,6 +10,10 @@ class User < ApplicationRecord
     grouped.map(&:amount).inject(:+) || 0
   end
 
+  # def total_ungrouped_books
+  #   grouped = books.reject { |item| item.groups.exists? }
+  #   grouped.map(&:amount).inject(:+) || 0
+  # end
   def total_ungrouped_books
     grouped = books.reject { |item| item.groups.exists? }
     grouped.map(&:amount).inject(:+) || 0

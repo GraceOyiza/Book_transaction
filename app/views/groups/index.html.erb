@@ -1,10 +1,7 @@
-<div class=" main-icon text-center ">
-    <%= group_array(@groups) %>
-    
-       
-     
-   <div class="group-style external-display ">
-     <%= link_to('New Group', new_group_path, class:"btn btn-success button-styling mt-5 ")%> 
-   </div> 
+<div class="p-4">
+    <%= render_group_collection(@groups) %>
+    <div class="custom-btn p-4 ">
+      <%= link_to 'New group', new_group_path, class: 'btn btn-lg custom-btn border border-white w-100' %>
+    </div>
 </div>
 
