@@ -12,6 +12,4 @@ class Book < ApplicationRecord
   scope :desc_group, -> { desc.select { |book| book.groups.exists? } }
 
   scope :desc_no_group, -> { desc.reject { |book| book.groups.exists? } }
-
-
 end
