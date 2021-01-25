@@ -1,0 +1,15 @@
+<div class="d-flex w-100 justify-content-between p-3 total-amount">
+    <h4 class="p-0">Total Amount</h4>
+    <p class=" "><%= number_to_currency(ungrouped_calculate(current_user.books) || 0 ) %></p>
+</div>
+
+  <div class='py-3 mt-3 mr-5'>
+  <div class='mx-4'>
+    <div class="row flex-column flex-md-row flex-wrap">
+      <%= render_book_collection(@books, 'book') %>
+    </div>
+      <div class="custom-btn p-4 mt-5">
+      <%= link_to 'Add New', new_book_path, class: 'btn btn-lg custom-btn border border-white w-100' %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+  <div class="text-center pt-5 page-forms">
+    <h1 class="pt-0 pb-4 mt-5">Sign Up</h1>
+    
+       
+            <%= form_for(:user, html: {class: "form-horizontal ", role: "form"}, url: users_path) do |f| %>
+
+           <div class="form-group">
+                <%= f.label :username, class:"font-weight-bold" %>
+                <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "Enter your username", class: "form-control w-50 placeholder" %>
+            </div>
+            <%= f.submit "Sign Up", class: 'btn btn-success' %>
+     <%end%>
+  </div>
+  

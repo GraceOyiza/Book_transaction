@@ -1,0 +1,14 @@
+<div class="text-center page-forms">
+    <h1 class=" mt-5 pb-4 pt-0">Login to your Gracia Book Save</h1>
+    
+        <%= form_for(:session, html: {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>
+
+            <div class="form-group">
+                <%= f.label :username, class:"font-weight-bold" %>
+                <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "Enter your username", class: "form-control w-50 placeholder" %>
+            </div>
+            <%= f.submit "Log in", class: 'btn btn-success' %>
+
+        <% end %>
+
+</div> 
