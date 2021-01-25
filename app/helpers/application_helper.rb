@@ -2,6 +2,7 @@ module ApplicationHelper
   def links_display
     links = ''
     if logged_in?
+      links << link_to('Profile', books_path, class: 'text-white mr-3')
       links << link_to('Logout', logout_path, method: :delete, class: 'text-white')
     else
       links << link_to('Log In', login_path, class: 'text-white pr-3')

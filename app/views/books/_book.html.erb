@@ -6,7 +6,8 @@
       <p class="card-title text-color font-weight-bold">$ <%= book.amount %> </p>
     </div>
     <div class="">
-    <p class="card-text light-text mb-3"> <%= book.created_at.to_formatted_s(:long) %> </p>
+    <p class="card-title light-text mb-0 ">Author: <%= book.creator.username %> </p>
+    <p class="card-text light-text mb-3">Date created: <%= book.created_at.to_formatted_s(:long) %> </p>
     <%= link_to 'Delete', book_path(book), class: 'btn btn-danger', method: :delete%>
     </div>
   </div>

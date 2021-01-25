@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :book_group, only: %i[show]
+  # before_action :book_group, only: %i[show]
   before_action :authenticate_user!
 
   def index
@@ -37,13 +37,11 @@ class GroupsController < ApplicationController
   end
 
   def show
-    if current_user.groups.include? @group
-      # @books = nil
-      # @books = @group.books.desc if @group.books.exists?
-    else
-      flash[:danger] = 'You are not allowed to view other users groups'
-      redirect_to groups_path
-    end
+    @group = Group.includes(:books).find(params[:id])
+    return @group if current_user.groups.include? @group
+
+    flash[:danger] = 'You are not allowed to view other users groups'
+    redirect_to groups_path
   end
 
   private

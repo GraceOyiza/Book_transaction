@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe GroupsController, type: :controller do
   describe 'before_actions' do
-    it { should use_before_action(:book_group) }
     it { should use_before_action(:authenticate_user!) }
   end
   describe 'GET #index' do
