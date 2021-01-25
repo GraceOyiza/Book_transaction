@@ -61,7 +61,7 @@ RSpec.describe 'User details', type: :feature do
     fill_in 'Username', with: 'Ade'
     click_button 'Log in'
     click_link 'My Groups'
-    click_link 'New Group'
+    click_link 'New group'
     expect(page).to have_current_path('/groups/new')
     expect(page).to have_content 'Upload book image'
     click_button 'Add Book Group'
